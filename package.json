@@ -1,0 +1,21 @@
+{
+  "name": "module12-quiz-sen10",
+  "version": "1.0.0",
+  "description": "Static site with GitHub Actions deployment, screenshot analysis, and automated linting.",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "rm -rf dist && mkdir -p dist/assets && cp index.html dist/index.html && cp styles.css dist/styles.css && cp script.js dist/script.js && cp -R assets/. dist/assets/"
+  },
+  "keywords": [
+    "github-pages",
+    "actions",
+    "eslint",
+    "static-site"
+  ],
+  "author": "Kyle",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  }
+}
