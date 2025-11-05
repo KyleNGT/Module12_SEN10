@@ -12,4 +12,4 @@ function toggleIdeas() {
 }
 
 // For the lint demo described in README, remove the semicolon on the next line to trigger ESLint's `semi` rule.
-toggleButton?.addEventListener('click', toggleIdeas);
+toggleButton?.addEventListener('click', toggleIdeas)
