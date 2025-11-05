@@ -37,7 +37,7 @@ To prove the linter blocks bad code, remove the semicolon mentioned in `script.j
 _Add the final public repository URL here once you push the project:_
 
 ```
-https://github.com/<your-username>/<your-repo-name>
+https://github.com/KyleNGT/Module12_SEN10
 ```
 
 ## LLM Prompts Log
