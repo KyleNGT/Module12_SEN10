@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f4f4;
+  color: #222222;
+}
+
+main {
+  max-width: 720px;
+  margin: 2.5rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border: 1px solid #d7d7d7;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+  color: #164873;
+}
+
+h2 {
+  color: #1f2933;
+  margin-top: 2rem;
+}
+
+p, li {
+  line-height: 1.6;
+}
+
+figure {
+  margin: 1rem 0;
+  background: #101820;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #f7fafc;
+}
+
+ul {
+  padding-left: 1.25rem;
+}
+
+button {
+  margin-top: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #164873;
+  border-radius: 6px;
+  background: #164873;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  background: #0e324f;
+}
+
+.idea-spark-stage {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.idea-spark {
+  position: absolute;
+  top: var(--spark-y);
+  left: var(--spark-x);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background: linear-gradient(135deg, hsl(var(--spark-hue), 76%, 49%), hsl(calc(var(--spark-hue) + 24), 84%, 54%));
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 18px 34px rgba(15, 46, 75, 0.32), 0 0 18px rgba(255, 255, 255, 0.22);
+  text-shadow: 0 2px 8px rgba(9, 25, 40, 0.45);
+  transform: translate(-50%, -50%) scale(0.75);
+  opacity: 0;
+  animation: sparkFloat 2.4s cubic-bezier(0.23, 0.82, 0.17, 1) var(--spark-delay) forwards;
+}
+
+@keyframes sparkFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75);
+    filter: blur(1px);
+  }
+  35% {
+    opacity: 0.95;
+    transform: translate(-50%, -68%) scale(1.03);
+    filter: blur(0);
+  }
+  70% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -118%) scale(0.88);
+    filter: blur(3px);
+  }
+}
+
+footer {
+  margin-top: 2.5rem;
+  font-size: 0.9rem;
+  color: #4a5662;
+}
+
+footer a {
+  color: #164873;
+}
+
+@media (max-width: 600px) {
+  main {
+    margin: 1.5rem;
+    padding: 1.5rem;
+  }
+}

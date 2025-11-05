@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
     "build": "rm -rf dist && mkdir -p dist/assets && cp index.html dist/index.html && cp styles.css dist/styles.css && cp script.js dist/script.js && cp -R assets/. dist/assets/"
   },
   "keywords": [
@@ -16,6 +17,8 @@
   "author": "Kyle",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.57.0"
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }

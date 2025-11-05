@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ugliest UI Rehab</title>
+  <meta name="description" content="Static GitHub Pages site that shows the worst UI I've seen and how I'd improve it." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1>Ugliest UI Rehab</h1>
+    <p>
+      This simple site is automatically deployed with GitHub Pages whenever I push to the repo. Below is a recreation of
+      the worst interface I have ever used, plus a short checklist of improvements I would make.
+    </p>
+
+    <section aria-labelledby="screenshot-title">
+      <h2 id="screenshot-title">The Offending Interface</h2>
+      <figure>
+        <img src="assets/ugliest-ui.svg" alt="Screenshot of a chaotic, neon-colored interface" />
+        <figcaption>Everything here fights for attention, so nothing wins.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="fix-title">
+      <h2 id="fix-title">Quick Fix Plan</h2>
+      <ul>
+        <li>Limit the color palette to one accent color and add breathing room.</li>
+        <li>Put the primary action first, keep help text nearby, and remove pop-ups.</li>
+        <li>Add semantic HTML, readable fonts, and keyboard-friendly controls.</li>
+      </ul>
+      <button id="toggle-ideas" type="button">Show extra improvement ideas</button>
+      <p id="more-ideas" hidden>
+        I would also add a short onboarding message, explain how data is stored, and confirm success with a friendly,
+        non-intrusive banner.
+      </p>
+    </section>
+
+    <footer>
+      <p>This project ships through a GitHub Actions workflow that lints, bundles, and deploys the page.</p>
+      <p>Repo link: <a id="repo-link" href="#">https://github.com/KyleNGT/Module12_SEN10</a></p>
+    </footer>
+  </main>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>

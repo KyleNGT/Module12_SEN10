@@ -16,8 +16,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    name: Lint and Build
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
 
     steps:
@@ -35,6 +35,44 @@ jobs:
 
       - name: Run ESLint quality gate
         run: npm run lint
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Jest tests
+        run: npm test
+
+  build:
+    name: Build
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build static bundle
         run: npm run build
