@@ -72,6 +72,54 @@ button:focus {
   background: #0e324f;
 }
 
+.idea-spark-stage {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.idea-spark {
+  position: absolute;
+  top: var(--spark-y);
+  left: var(--spark-x);
+  padding: 0.35rem 0.7rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background: linear-gradient(135deg, hsl(var(--spark-hue), 76%, 49%), hsl(calc(var(--spark-hue) + 24), 84%, 54%));
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 18px 34px rgba(15, 46, 75, 0.32), 0 0 18px rgba(255, 255, 255, 0.22);
+  text-shadow: 0 2px 8px rgba(9, 25, 40, 0.45);
+  transform: translate(-50%, -50%) scale(0.75);
+  opacity: 0;
+  animation: sparkFloat 2.4s cubic-bezier(0.23, 0.82, 0.17, 1) var(--spark-delay) forwards;
+}
+
+@keyframes sparkFloat {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75);
+    filter: blur(1px);
+  }
+  35% {
+    opacity: 0.95;
+    transform: translate(-50%, -68%) scale(1.03);
+    filter: blur(0);
+  }
+  70% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -118%) scale(0.88);
+    filter: blur(3px);
+  }
+}
+
 footer {
   margin-top: 2.5rem;
   font-size: 0.9rem;
